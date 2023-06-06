@@ -1,18 +1,74 @@
-<template>
-  <div class="dark:bg-gray-800 dark:text-gray-200">
-    <p class="p-4 pb-2">
-      <select
-        v-model="$colorMode.preference"
-        class="border w-24 h-8 dark:bg-gray-900 dark:text-white dark:border-gray-700"
-      >
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-    </p>
+<script setup lang="ts">
+const route = useRoute();
+</script>
 
-    <div class="container mx-auto">
+<template>
+  <div class="vars">
+    <div class="navbar__nav">
+      <nuxt-link
+        to="/"
+        class="navbar__nav-link"
+        :class="{
+          'navbar__nav-link--active': route.path == '/',
+        }"
+      >
+        About
+      </nuxt-link>
+      <nuxt-link
+        to="/portfolio"
+        class="navbar__nav-link"
+        :class="{
+          'navbar__nav-link--active': route.path == '/portfolio',
+        }"
+      >
+        Portfolio
+      </nuxt-link>
+      <nuxt-link
+        to="/resume"
+        class="navbar__nav-link"
+        :class="{
+          'navbar__nav-link--active': route.path == '/resume',
+        }"
+      >
+        Resume
+      </nuxt-link>
+      <nuxt-link
+        to="/contact"
+        class="navbar__nav-link"
+        :class="{
+          'navbar__nav-link--active': route.path == '/contact',
+        }"
+      >
+        Contact
+      </nuxt-link>
+    </div>
+
+    <div>
       <slot name="content" />
     </div>
   </div>
 </template>
+
+<style scoped>
+.vars {
+  --navbar__nav-link-font-size: 16px;
+}
+
+.navbar__nav {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.navbar__nav-link {
+  margin: 0 16px;
+  color: var(--navbar__nav-link-text-color);
+  font-size: var(--navbar__nav-link-font-size);
+  text-decoration: none;
+}
+
+.navbar__nav-link--active {
+  color: var(--navbar__nav-link-text-color--active);
+  font-weight: 700;
+}
+</style>

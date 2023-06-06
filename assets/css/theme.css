@@ -1,0 +1,7 @@
+:root {
+  --background-color: #011627;
+  --text-color: #fff;
+
+  --navbar__nav-link-text-color: #fdfffc;
+  --navbar__nav-link-text-color--active: #e71d5a;
+}
