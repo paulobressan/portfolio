@@ -95,7 +95,6 @@ defineProps<Props>();
   text-decoration: none;
   font-weight: 700;
   border-radius: 24px;
-  box-shadow: 0px 2px 8px rgba(64, 64, 64, 0.25);
 }
 
 .card__link i {
