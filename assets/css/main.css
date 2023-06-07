@@ -1,20 +1,20 @@
 @import url("./theme.css");
 
 @font-face {
-  font-family: "Dosis";
-  src: url("../fonts/Dosis-Regular.ttf") format("truetype");
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Regular.ttf");
 }
 
 @font-face {
-  font-family: "Dosis";
-  src: url("../fonts/Dosis-Bold.ttf") format("truetype");
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans-Bold.ttf");
   font-weight: bold;
 }
 
 html,
 body,
 #app {
-  font-family: "Dosis";
+  font-family: "Open Sans";
   background: var(--background-color);
   color: var(--text-color);
   min-height: 100vh;

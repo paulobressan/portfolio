@@ -1,0 +1,97 @@
+{
+    "name": "Youssef Brahim",
+    "role": "UI/UX Design",
+    "summary": "I create user-centric designs by conducting thorough user research and crafting intuitive experiences through wireframing, prototyping, and iterative testing. I collaborate closely with stakeholders and team members to ensure successful implementation and aim to create impactful user experiences with compelling visual interfaces.",
+    "projects": [
+        {
+            "name": "A intuitive aplication for anything in the world",
+            "image": "/project1.png",
+            "summary": "",
+            "tags": [
+                {
+                    "text": "Writing",
+                    "color": "yellow"
+                }
+            ]
+        },
+        {
+            "name": "A intuitive aplication for anything in the world",
+            "image": "/project2.png",
+            "summary": "",
+            "tags": [
+                {
+                    "text": "Research",
+                    "color": "green"
+                },
+                {
+                    "text": "Strategy",
+                    "color": "yellow"
+                }
+            ]
+        },
+        {
+            "name": "A intuitive aplication for anything in the world",
+            "image": "/project3.png",
+            "summary": "",
+            "tags": [
+                {
+                    "text": "Research",
+                    "color": "green"
+                },
+                {
+                    "text": "Mapping",
+                    "color": "yellow"
+                },
+                {
+                    "text": "UI",
+                    "color": "red"
+                }
+            ]
+        },
+        {
+            "name": "A intuitive aplication for anything in the world",
+            "image": "/project1.png",
+            "summary": "",
+            "tags": [
+                {
+                    "text": "Writing",
+                    "color": "yellow"
+                }
+            ]
+        },
+        {
+            "name": "A intuitive aplication for anything in the world",
+            "image": "/project2.png",
+            "summary": "",
+            "tags": [
+                {
+                    "text": "Research",
+                    "color": "green"
+                },
+                {
+                    "text": "Strategy",
+                    "color": "yellow"
+                }
+            ]
+        },
+        {
+            "name": "A intuitive aplication for anything in the world",
+            "image": "/project3.png",
+            "summary": "",
+            "tags": [
+                {
+                    "text": "Research",
+                    "color": "green"
+                },
+                {
+                    "text": "Mapping",
+                    "color": "yellow"
+                },
+                {
+                    "text": "UI",
+                    "color": "red"
+                }
+            ]
+        }
+    ]
+}
