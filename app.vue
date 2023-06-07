@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import data from "~/portfolio.json";
-import { Portfolio } from "~/interfaces";
+import json from "~/portfolio.json";
+import { Data } from "~/interfaces";
 
-const portfolio: Portfolio = data;
+const data: Data = json;
 
 useHead({
   meta: [
     {
       name: "description",
-      content: portfolio.summary,
+      content: data.about.summary,
     },
     {
       name: "og:image",

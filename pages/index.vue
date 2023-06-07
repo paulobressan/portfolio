@@ -2,14 +2,14 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 
-import data from "~/portfolio.json";
+import json from "~/portfolio.json";
 import Card from "~/components/Card.vue";
-import { Portfolio } from "~/interfaces";
+import { Data } from "~/interfaces";
 
-const portfolio: Portfolio = data;
+const data: Data = json;
 
 useHead({
-  title: `${portfolio.name} - ${portfolio.role}`,
+  title: `${data.about.name} - ${data.about.role}`,
 });
 </script>
 
@@ -17,17 +17,17 @@ useHead({
   <div class="vars">
     <div class="info">
       <h1 class="info__title">
-        {{ portfolio.name }}
+        {{ data.about.name }}
       </h1>
       <h2 class="info__subtitle">
-        {{ portfolio.role }}
+        {{ data.about.role }}
       </h2>
       <div class="info__text">
-        {{ portfolio.summary }}
+        {{ data.about.summary }}
       </div>
       <nuxt-link to="/contact" class="info__contact"> Contact me </nuxt-link>
     </div>
-    <div v-if="portfolio.projects?.length" class="projects">
+    <div class="projects">
       <swiper
         :slides-per-view="1.25"
         space-between="16"
@@ -52,7 +52,7 @@ useHead({
           },
         }"
       >
-        <swiper-slide v-for="(project, i) in portfolio.projects" :key="i">
+        <swiper-slide v-for="(project, i) in data.portfolio.projects" :key="i">
           <Card
             :name="project.name"
             :image="project.image"

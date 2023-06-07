@@ -11,9 +11,17 @@ export interface Project {
   link?: string;
 }
 
-export interface Portfolio {
+export interface About {
   name: string;
   role: string;
   summary: string;
-  projects?: Project[];
+}
+
+export interface Portfolio {
+  projects: Project[];
+}
+
+export interface Data {
+  about: About;
+  portfolio: Portfolio;
 }

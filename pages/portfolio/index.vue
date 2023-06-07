@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { Portfolio } from "~/interfaces";
-import data from "~/portfolio.json";
+import { Data } from "~/interfaces";
+import json from "~/portfolio.json";
 import CardPortfolio from "~/components/CardPortfolio.vue";
 
-const portfolio: Portfolio = data;
+const data: Data = json;
 
 useHead({
-  title: `Portfolio | ${portfolio.name} - ${portfolio.role}`,
+  title: `Portfolio | ${data.about.name} - ${data.about.role}`,
 });
 </script>
 
 <template>
   <div class="vars">
-    <div v-if="portfolio.projects?.length" class="projects">
+    <div v-if="data.portfolio.projects?.length" class="projects">
       <div class="projects__label">All projects</div>
-      <div v-for="project in portfolio.projects" class="projects__card">
+      <div v-for="project in data.portfolio.projects" class="projects__card">
         <CardPortfolio
           :name="project.name"
           :summary="project.summary"
