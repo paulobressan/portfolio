@@ -65,10 +65,20 @@ defineProps<Props>();
   display: flex;
   align-items: center;
 }
-.card__image img {
+.card__image {
   width: 320px;
+  height: auto;
+  overflow: hidden;
   border-radius: 18px;
 }
+.card__image img {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.card__image img:hover {
+  transform: scale(1.2);
+}
+
 .card__content {
   position: relative;
   padding: 16px;
@@ -113,8 +123,6 @@ defineProps<Props>();
 
   .card__image {
     margin-bottom: 16px;
-  }
-  .card__image img {
     width: 100%;
   }
 
