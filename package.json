@@ -13,6 +13,7 @@
     "nuxt": "^3.5.2"
   },
   "dependencies": {
+    "bootstrap-icons": "^1.10.5",
     "swiper": "^9.3.2"
   }
 }

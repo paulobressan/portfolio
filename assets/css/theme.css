@@ -10,6 +10,10 @@
   --info__contact-background: #e71d5a;
   --info__contact-color: #fff;
 
+  --portfolio__label: #808a93;
+  --portfolio__view-button-background-color: #e71d5a;
+  --portfolio__view-button-text-color: #fff;
+
   --card__tag-yellow-text-color: #ff9f1c;
   --card__tag-yellow-background-color: rgba(255, 159, 28, 0.15);
   --card__tag-green-text-color: #2ec4b6;

@@ -8,6 +8,7 @@ export interface Project {
   summary: string;
   image?: string;
   tags?: Tag[];
+  link?: string;
 }
 
 export interface Portfolio {

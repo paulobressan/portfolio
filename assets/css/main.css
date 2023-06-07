@@ -20,3 +20,33 @@ body,
   min-height: 100vh;
   margin: 0;
 }
+
+.card__tags {
+  display: flex;
+}
+
+.card__tags-content {
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.card__tags-content--yellow {
+  color: var(--card__tag-yellow-text-color);
+  background: var(--card__tag-yellow-background-color);
+}
+.card__tags-content--green {
+  color: var(--card__tag-green-text-color);
+  background: var(--card__tag-green-background-color);
+}
+.card__tags-content--red {
+  color: var(--card__tag-red-text-color);
+  background: var(--card__tag-red-background-color);
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1rem 0;
+}

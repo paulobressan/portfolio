@@ -86,7 +86,6 @@ useHead({
 }
 
 .info {
-  margin: 0 25%;
   text-align: center;
   margin: var(--info__margin);
 }
