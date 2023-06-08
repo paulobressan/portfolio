@@ -99,5 +99,56 @@
                 ]
             }
         ]
+    },
+    "resume": {
+        "experience": [
+            {
+                "startAt": "2021",
+                "endAt": "present",
+                "name": "Senior UX/UI Design • Cardano Warriors",
+                "summary": "As a Senior UX Designer at Cardano Warriors, I led the user-centered design process for various digital products, collaborating with cross-functional teams to define project goals. I conducted user research, created wireframes and prototypes, and iterated designs based on feedback and testing. Implementing best practices, I delivered intuitive and visually appealing user interfaces while also mentoring junior team members. My contributions consistently enhanced user satisfaction and drove business success."
+            },
+            {
+                "startAt": "2021",
+                "endAt": "2022",
+                "name": "UX Strategy • Orion Labs",
+                "summary": "As a UX Strategy professional at Orion Labs, I developed and executed comprehensive UX strategies aligned with business objectives. Through market research and collaboration with cross-functional teams, I prioritized initiatives and created user personas, journey maps, and design systems. I established KPIs, provided guidance to team members, and fostered innovation. My strategic approach and collaborative efforts resulted in user-centered experiences that drove customer satisfaction and business success."
+            }
+        ],
+        "education": [
+            {
+                "year": "2021",
+                "name": "Alura • Figma Formation"
+            },
+            {
+                "year": "2021",
+                "name": "Leandro Rezende Institute • UX Unicorn"
+            },
+            {
+                "year": "2022",
+                "name": "Plurix • UX Writing"
+            },
+            {
+                "year": "2023",
+                "name": "Alura • Design System Formation"
+            }
+        ],
+        "skill": {
+            "hard": [
+                "Figma",
+                "Adobe Suite",
+                "Figjam"
+            ],
+            "soft": [
+                "Communication",
+                "Adaptability",
+                "Problem-solving"
+            ],
+            "tech": [
+                "Design Thinking",
+                "Prototypes",
+                "Wireframes"
+            ]
+        }
     }
 }

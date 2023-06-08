@@ -3,7 +3,7 @@
   --text-color: #fff;
 
   --navbar__nav-link-text-color: #fdfffc;
-  --navbar__nav-link-text-color--active: #ad1c4d;
+  --navbar__nav-link-text-color--active: #e71d5a;
 
   --info__title-color: #e71d5a;
   --info__subtitle-color: #fff;
@@ -15,6 +15,11 @@
   --portfolio__view-button-text-color: #fff;
   --portfolio__more-button-background-color: rgba(230, 30, 90, 0.1);
   --portfolio__more-button-text-color: #e71d5a;
+
+  --resume__experience-title-text-color: #e71d5a;
+  --resume__experience-date-text-color: #bec5c7;
+  --resume__skill-label-background-color: rgba(255, 255, 255, 0.1);
+  --resume__skill-label-text-color: #fff;
 
   --card__tag-yellow-text-color: #ff9f1c;
   --card__tag-yellow-background-color: rgba(255, 159, 28, 0.15);

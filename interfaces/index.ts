@@ -21,7 +21,32 @@ export interface Portfolio {
   projects: Project[];
 }
 
+export interface Experience {
+  startAt: string;
+  endAt: string;
+  name: string;
+  summary: string;
+}
+
+export interface Education {
+  year: string;
+  name: string;
+}
+
+export interface Skill {
+  hard?: string[];
+  soft?: string[];
+  tech?: string[];
+}
+
+export interface Resume {
+  experience?: Experience[];
+  education?: Education[];
+  skill?: Skill;
+}
+
 export interface Data {
   about: About;
   portfolio: Portfolio;
+  resume?: Resume;
 }

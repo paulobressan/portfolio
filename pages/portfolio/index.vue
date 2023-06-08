@@ -67,7 +67,7 @@ function openSeeMore(project: Project) {
 
 <style scoped>
 .vars {
-  --projects__margin: 48px 10% 0 10%;
+  --projects__margin: 24px 10% 0 10%;
 }
 
 @media only screen and (max-width: 768px) {
