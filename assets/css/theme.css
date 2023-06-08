@@ -13,6 +13,8 @@
   --portfolio__label: #808a93;
   --portfolio__view-button-background-color: #e71d5a;
   --portfolio__view-button-text-color: #fff;
+  --portfolio__more-button-background-color: rgba(230, 30, 90, 0.1);
+  --portfolio__more-button-text-color: #e71d5a;
 
   --card__tag-yellow-text-color: #ff9f1c;
   --card__tag-yellow-background-color: rgba(255, 159, 28, 0.15);
@@ -20,4 +22,7 @@
   --card__tag-green-background-color: rgba(46, 196, 182, 0.15);
   --card__tag-red-text-color: #e71d5a;
   --card__tag-red-background-color: rgba(231, 29, 90, 0.15);
+
+  --modal__background-color: #011627;
+  --modal__text-color: #fff;
 }

@@ -9,6 +9,11 @@ interface Props {
   link?: string;
 }
 defineProps<Props>();
+
+interface Emits {
+  (e: "onSeeMore"): void;
+}
+const emit = defineEmits<Emits>();
 </script>
 
 <template>
@@ -17,32 +22,43 @@ defineProps<Props>();
       <img :src="image" :alt="name" />
     </div>
     <div class="card__content">
-      <div class="card__tags">
-        <div v-for="(tag, i) in tags" :key="i">
-          <div
-            class="card__tags-content"
-            :class="`card__tags-content--${tag.color}`"
-          >
-            {{ tag.text }}
+      <div>
+        <div class="tags">
+          <div v-for="(tag, i) in tags" :key="i">
+            <div
+              class="tags__content"
+              :class="`tags__content--${tag.color}`"
+            >
+              {{ tag.text }}
+            </div>
           </div>
         </div>
+        <h1 class="card__name">
+          {{ name }}
+        </h1>
+        <div class="card__summary">
+          {{ summary }}
+        </div>
       </div>
-      <h1 class="card__name">
-        {{ name }}
-      </h1>
-      <div>
-        {{ summary }}
+      <div class="card__actions">
+        <button
+          type="button"
+          class="card__actions-button"
+          @click="emit('onSeeMore')"
+        >
+          See More
+        </button>
+        <a
+          v-if="link"
+          :href="link"
+          target="_blank"
+          class="card__actions-link"
+          title="Open link"
+        >
+          <i class="bi bi-box-arrow-up-right"></i>
+          View now
+        </a>
       </div>
-      <a
-        v-if="link"
-        :href="link"
-        target="_blank"
-        class="card__link"
-        title="Open link"
-      >
-        <i class="bi bi-box-arrow-up-right"></i>
-        View
-      </a>
     </div>
   </div>
 </template>
@@ -50,11 +66,13 @@ defineProps<Props>();
 <style scoped>
 .vars {
   --card__name-font-size: 24px;
+  --card__summary-line-clamp: 3;
 }
 
 @media only screen and (max-width: 768px) {
   .vars {
     --card__name-font-size: 20px;
+    --card__summary-line-clamp: 6;
   }
 }
 
@@ -66,7 +84,7 @@ defineProps<Props>();
   align-items: center;
 }
 .card__image {
-  width: 320px;
+  width: 360px;
   height: auto;
   overflow: hidden;
   border-radius: 18px;
@@ -80,31 +98,55 @@ defineProps<Props>();
 }
 
 .card__content {
-  position: relative;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 16px;
   width: 100%;
 }
 .card__name {
   font-size: var(--card__name-font-size);
   font-weight: 700;
   margin: 0;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+.card__summary {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--card__summary-line-clamp);
+  line-height: 18px;
+  margin-bottom: 8px;
+}
+.tags {
+  margin-bottom: 8px;
 }
 
-.card__tags {
-  margin-bottom: 16px;
+.card__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.card__link {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  padding: 8px 16px;
+.card__actions-link {
+  padding: 12px 24px;
   background: var(--portfolio__view-button-background-color);
-  color: var(--portfolio__view-button-color-color);
+  color: var(--portfolio__view-button-text-color);
   text-decoration: none;
   font-weight: 700;
   border-radius: 24px;
+  margin-left: 16px;
+}
+
+.card__actions-button {
+  padding: 12px 24px;
+  background: var(--portfolio__more-button-background-color);
+  color: var(--portfolio__more-button-text-color);
+  font-weight: 700;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
 }
 
 .card__link i {
@@ -129,6 +171,10 @@ defineProps<Props>();
   .card__link {
     position: unset;
     float: right;
+  }
+
+  .card__summary {
+    margin-bottom: 16px;
   }
 }
 </style>

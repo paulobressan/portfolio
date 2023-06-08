@@ -18,11 +18,11 @@ defineProps<Props>();
       <h3 class="card__name">
         {{ name }}
       </h3>
-      <div class="card__tags">
+      <div class="tags">
         <div v-for="(tag, i) in tags" :key="i">
           <div
-            class="card__tags-content"
-            :class="`card__tags-content--${tag.color}`"
+            class="tags__content"
+            :class="`tags__content--${tag.color}`"
           >
             {{ tag.text }}
           </div>
