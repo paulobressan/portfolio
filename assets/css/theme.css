@@ -5,10 +5,10 @@
   --navbar__nav-link-text-color: #fdfffc;
   --navbar__nav-link-text-color--active: #e71d5a;
 
-  --info__title-color: #e71d5a;
-  --info__subtitle-color: #fff;
-  --info__contact-background: #e71d5a;
-  --info__contact-color: #fff;
+  --about__title-color: #e71d5a;
+  --about__subtitle-color: #fff;
+  --about__contact-background: #e71d5a;
+  --about__contact-color: #fff;
 
   --portfolio__label: #808a93;
   --portfolio__view-button-background-color: #e71d5a;
@@ -21,12 +21,16 @@
   --resume__skill-label-background-color: rgba(255, 255, 255, 0.1);
   --resume__skill-label-text-color: #fff;
 
-  --card__tag-yellow-text-color: #ff9f1c;
-  --card__tag-yellow-background-color: rgba(255, 159, 28, 0.15);
-  --card__tag-green-text-color: #2ec4b6;
-  --card__tag-green-background-color: rgba(46, 196, 182, 0.15);
-  --card__tag-red-text-color: #e71d5a;
-  --card__tag-red-background-color: rgba(231, 29, 90, 0.15);
+  --contact__button-background-color: #18172c;
+  --contact__button-text-color: #fff;
+  --contact__button-icon-text-color: #e71d5a;
+
+  --tags__yellow-text-color: #ff9f1c;
+  --tags__yellow-background-color: rgba(255, 159, 28, 0.15);
+  --tags__green-text-color: #2ec4b6;
+  --tags__green-background-color: rgba(46, 196, 182, 0.15);
+  --tags__red-text-color: #e71d5a;
+  --tags__red-background-color: rgba(231, 29, 90, 0.15);
 
   --modal__background-color: #011627;
   --modal__text-color: #fff;

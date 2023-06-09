@@ -34,16 +34,16 @@ body,
 }
 
 .tags__content--yellow {
-  color: var(--card__tag-yellow-text-color);
-  background: var(--card__tag-yellow-background-color);
+  color: var(--tags__yellow-text-color);
+  background: var(--tags__yellow-background-color);
 }
 .tags__content--green {
-  color: var(--card__tag-green-text-color);
-  background: var(--card__tag-green-background-color);
+  color: var(--tags__green-text-color);
+  background: var(--tags__green-background-color);
 }
 .tags__content--red {
-  color: var(--card__tag-red-text-color);
-  background: var(--card__tag-red-background-color);
+  color: var(--tags__red-text-color);
+  background: var(--tags__red-background-color);
 }
 
 hr {

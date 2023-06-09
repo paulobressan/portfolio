@@ -18,25 +18,22 @@ const emit = defineEmits<Emits>();
 
 <template>
   <div class="vars card">
-    <div class="card__image">
+    <div class="card__image card-mb">
       <img :src="image" :alt="name" />
     </div>
     <div class="card__content">
       <div>
-        <div class="tags">
+        <div class="tags card-mb">
           <div v-for="(tag, i) in tags" :key="i">
-            <div
-              class="tags__content"
-              :class="`tags__content--${tag.color}`"
-            >
+            <div class="tags__content" :class="`tags__content--${tag.color}`">
               {{ tag.text }}
             </div>
           </div>
         </div>
-        <h1 class="card__name">
+        <h1 class="card__name card-mb">
           {{ name }}
         </h1>
-        <div class="card__summary">
+        <div class="card__summary card-mb">
           {{ summary }}
         </div>
       </div>
@@ -65,15 +62,21 @@ const emit = defineEmits<Emits>();
 
 <style scoped>
 .vars {
+  --card__margin-bottom: 16px;
   --card__name-font-size: 24px;
-  --card__summary-line-clamp: 3;
+  --card__summary-line-clamp: 2;
 }
 
 @media only screen and (max-width: 768px) {
   .vars {
+    --card__margin-bottom: 16px;
     --card__name-font-size: 20px;
-    --card__summary-line-clamp: 6;
+    --card__summary-line-clamp: 4;
   }
+}
+
+.card-mb {
+  margin-bottom: var(--card__margin-bottom);
 }
 
 .card {
@@ -107,8 +110,6 @@ const emit = defineEmits<Emits>();
 .card__name {
   font-size: var(--card__name-font-size);
   font-weight: 700;
-  margin: 0;
-  margin-bottom: 8px;
 }
 .card__summary {
   overflow: hidden;
@@ -117,10 +118,6 @@ const emit = defineEmits<Emits>();
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--card__summary-line-clamp);
   line-height: 18px;
-  margin-bottom: 8px;
-}
-.tags {
-  margin-bottom: 8px;
 }
 
 .card__actions {
@@ -137,6 +134,7 @@ const emit = defineEmits<Emits>();
   font-weight: 700;
   border-radius: 24px;
   margin-left: 16px;
+  font-size: 16px;
 }
 
 .card__actions-button {
@@ -147,6 +145,7 @@ const emit = defineEmits<Emits>();
   border-radius: 24px;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .card__link i {
@@ -164,17 +163,12 @@ const emit = defineEmits<Emits>();
   }
 
   .card__image {
-    margin-bottom: 16px;
     width: 100%;
   }
 
   .card__link {
     position: unset;
     float: right;
-  }
-
-  .card__summary {
-    margin-bottom: 16px;
   }
 }
 </style>
