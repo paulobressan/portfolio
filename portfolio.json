@@ -150,5 +150,13 @@
                 "Wireframes"
             ]
         }
+    },
+    "contact": {
+        "email": "paulo.bressan@outlook.com",
+        "github": "https://github.com/paulobressan",
+        "linkedin": "https://www.linkedin.com/in/paulo-b-335501115/",
+        "phone": "+5516994449951",
+        "twitter": "https://twitter.com/Paulo_BressanJr",
+        "website": "https://globe.com"
     }
 }

@@ -16,16 +16,16 @@ useHead({
 <template>
   <div class="vars">
     <div class="info">
-      <h1 class="info__title">
+      <h1 class="about__title">
         {{ data.about.name }}
       </h1>
-      <h2 class="info__subtitle">
+      <h2 class="about__subtitle">
         {{ data.about.role }}
       </h2>
       <div class="info__text">
         {{ data.about.summary }}
       </div>
-      <nuxt-link to="/contact" class="info__contact"> Contact me </nuxt-link>
+      <nuxt-link to="/contact" class="about__contact"> Contact me </nuxt-link>
     </div>
     <div class="projects">
       <swiper
@@ -66,21 +66,21 @@ useHead({
 
 <style scoped>
 .vars {
-  --info__title-font-size: 24px;
-  --info__subtitle-font-size: 56px;
-  --info__margin: 0 25% 48px 25%;
-  --info__title-margin: 48px 0 0 0;
-  --info__subtitle-margin: 0 0 48px 0;
+  --about__title-font-size: 24px;
+  --about__subtitle-font-size: 56px;
+  --info__margin: 0 20% 48px 20%;
+  --about__title-margin: 48px 0 0 0;
+  --about__subtitle-margin: 0 0 48px 0;
   --projects__margin: 0 0 16px 16px;
 }
 
 @media only screen and (max-width: 768px) {
   .vars {
-    --info__title-font-size: 20px;
-    --info__subtitle-font-size: 32px;
+    --about__title-font-size: 20px;
+    --about__subtitle-font-size: 32px;
     --info__margin: 0 16px 48px 16px;
-    --info__title-margin: 16px 0 0 0;
-    --info__subtitle-margin: 0 0 16px 0;
+    --about__title-margin: 16px 0 0 0;
+    --about__subtitle-margin: 0 0 16px 0;
     --projects__margin: 0 0 16px 16px;
   }
 }
@@ -90,27 +90,27 @@ useHead({
   margin: var(--info__margin);
 }
 
-.info__title {
-  font-size: var(--info__title-font-size);
-  color: var(--info__title-color);
+.about__title {
+  font-size: var(--about__title-font-size);
+  color: var(--about__title-color);
   font-weight: 700;
-  margin: var(--info__title-margin);
+  margin: var(--about__title-margin);
 }
 
-.info__subtitle {
-  font-size: var(--info__subtitle-font-size);
-  color: var(--info__subtitle-color);
+.about__subtitle {
+  font-size: var(--about__subtitle-font-size);
+  color: var(--about__subtitle-color);
   font-weight: 400;
-  margin: var(--info__subtitle-margin);
+  margin: var(--about__subtitle-margin);
 }
 
 .info__text {
   margin: 0 0 48px 0;
 }
 
-.info__contact {
-  background: var(--info__contact-background);
-  color: var(--info__contact-color);
+.about__contact {
+  background: var(--about__contact-background);
+  color: var(--about__contact-color);
   text-decoration: none;
   padding: 12px 24px;
   border-radius: 24px;
