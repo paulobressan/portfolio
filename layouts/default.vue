@@ -71,4 +71,10 @@ const route = useRoute();
   color: var(--navbar__nav-link-text-color--active);
   font-weight: 700;
 }
+
+@media only screen and (max-width: 768px) {
+  .navbar__nav {
+    justify-content: space-between;
+  }
+}
 </style>
