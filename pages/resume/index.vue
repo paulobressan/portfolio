@@ -13,7 +13,7 @@ useHead({
     <div class="resume">
       <div class="resume__margin-bottom">
         <div class="resume__title">
-          <i class="bi bi-bag-fill"></i>
+          <i class="bi bi-briefcase-fill"></i>
           <h1>Experience</h1>
         </div>
         <div
@@ -92,7 +92,7 @@ useHead({
   --resume__margin: 24px 10% 0 10%;
   --resume__margin-bottom: 48px;
   --resume__title-font-size: 24px;
-  --resume__title-margin-bottom: 24px;
+  --resume__title-margin-bottom: 28px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -100,7 +100,7 @@ useHead({
     --resume__margin: 0 16px 0 16px;
     --resume__margin-bottom: 28px;
     --resume__title-font-size: 18px;
-    --resume__title-margin-bottom: 12px;
+    --resume__title-margin-bottom: 16px;
   }
 }
 
@@ -119,6 +119,7 @@ useHead({
 }
 .resume__title h1 {
   font-size: var(--resume__title-font-size);
+  margin: 0;
 }
 .resume__title i {
   margin-right: 16px;
