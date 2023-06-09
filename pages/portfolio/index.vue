@@ -101,8 +101,8 @@ function openSeeMore(project: Project) {
   height: 100%;
   width: 100%;
   top: 0;
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
   display: flex;
   justify-content: center;
   align-items: center;
