@@ -20,10 +20,7 @@ defineProps<Props>();
       </h3>
       <div class="tags">
         <div v-for="(tag, i) in tags" :key="i">
-          <div
-            class="tags__content"
-            :class="`tags__content--${tag.color}`"
-          >
+          <div class="tags__content" :class="`tags__content--${tag.color}`">
             {{ tag.text }}
           </div>
         </div>
@@ -38,11 +35,13 @@ defineProps<Props>();
 }
 
 .card__image {
+  display: flex;
+  align-items: center;
   max-width: 320px;
   width: 100%;
   height: auto;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 24px;
 }
 .card__image img {
   width: 100%;
