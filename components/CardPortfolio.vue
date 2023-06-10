@@ -82,11 +82,10 @@ const emit = defineEmits<Emits>();
 .card {
   display: flex;
 }
+
 .card__image {
   display: flex;
   align-items: center;
-}
-.card__image {
   width: 360px;
   height: auto;
   overflow: hidden;
