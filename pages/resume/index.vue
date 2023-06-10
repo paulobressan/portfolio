@@ -165,7 +165,6 @@ useHead({
 
 .resume__skill-card {
   display: flex;
-  align-items: center;
   margin-bottom: 16px;
 }
 .resume__skill-card-date {
@@ -174,19 +173,20 @@ useHead({
   min-width: 160px;
   font-weight: 700;
   color: var(--resume__experience-date-text-color);
+  margin-bottom: 8px;
 }
 .resume__skill-card-label {
   display: flex;
-  overflow-x: auto;
+  flex-wrap: wrap;
 }
 .resume__skill-card-label div {
   margin-right: 8px;
+  margin-bottom: 8px;
   border-radius: 16px;
   background: var(--resume__skill-label-background-color);
   color: var(--resume__skill-label-text-color);
   padding: 4px 8px;
   font-weight: 700;
-  white-space: nowrap;
 }
 
 @media only screen and (max-width: 768px) {
