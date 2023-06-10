@@ -10,22 +10,26 @@ useHead({
       name: "description",
       content: data.about.summary,
     },
-    {
-      name: "og:image",
-      content: "/image.png",
-    },
-    {
-      name: "og:image:type",
-      content: "image/png",
-    },
-    {
-      name: "og:image:width",
-      content: "512",
-    },
-    {
-      name: "og:image:height",
-      content: "512",
-    },
+    ...(data.about.image
+      ? [
+          {
+            name: "og:image",
+            content: data.about.image,
+          },
+          {
+            name: "og:image:type",
+            content: "image/png",
+          },
+          {
+            name: "og:image:width",
+            content: "512",
+          },
+          {
+            name: "og:image:height",
+            content: "512",
+          },
+        ]
+      : []),
   ],
 });
 </script>

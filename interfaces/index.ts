@@ -15,6 +15,7 @@ export interface About {
   name: string;
   role: string;
   summary: string;
+  image?: string;
 }
 
 export interface Portfolio {

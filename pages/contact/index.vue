@@ -30,8 +30,8 @@ useHead({
           />
         </div>
       </div>
-      <div class="contact__image">
-        <img src="/profile.png" alt="Profile" />
+      <div v-if="data.about.image" class="contact__image">
+        <img :src="data.about.image" alt="Profile" />
       </div>
     </div>
   </div>
@@ -74,9 +74,12 @@ useHead({
 
 .contact__image {
   width: 30%;
+  margin-bottom: 16px;
 }
 .contact__image img {
   width: 100%;
+  border: 2px solid var(--contact__image-border-color);
+  border-radius: 24px;
 }
 
 @media only screen and (max-width: 768px) {

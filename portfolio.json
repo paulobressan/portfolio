@@ -1,8 +1,9 @@
 {
     "about": {
-        "name": "Youssef Brahim",
-        "role": "UI/UX Design",
-        "summary": "I create user-centric designs by conducting thorough user research and crafting intuitive experiences through wireframing, prototyping, and iterative testing. I collaborate closely with stakeholders and team members to ensure successful implementation and aim to create impactful user experiences with compelling visual interfaces."
+        "name": "Paulo Bressan",
+        "role": "Software Engineer",
+        "summary": "I create user-centric designs by conducting thorough user research and crafting intuitive experiences through wireframing, prototyping, and iterative testing. I collaborate closely with stakeholders and team members to ensure successful implementation and aim to create impactful user experiences with compelling visual interfaces.",
+        "image": "/image.png"
     },
     "portfolio": {
         "projects": [
