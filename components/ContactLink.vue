@@ -41,7 +41,7 @@ const link = computed(() => {
       <div>
         <i class="bi" :class="icon"></i>
       </div>
-      <div>{{ value }}</div>
+      <div class="link__content-text">{{ value }}</div>
     </div>
     <div>
       <i class="bi bi-arrow-right"></i>
@@ -62,19 +62,29 @@ const link = computed(() => {
   padding: 8px 32px;
   text-decoration: none;
 }
+
 .link i {
   font-size: 32px;
   color: var(--contact__button-icon-text-color);
 }
+
 .link__content {
   display: flex;
   align-items: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+
   -webkit-line-clamp: 1;
 }
+
 .link__content i {
   margin-right: 32px;
+}
+
+.link__content-text {
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 </style>
