@@ -8,6 +8,22 @@
     "portfolio": {
         "projects": [
             {
+                "name": "TxPipe",
+                "image": "/txpipe.png",
+                "summary": "Open-source software for a decentralized world. We believe that blockchain adoption can be accelerated by improving developer experience. We develop blockchain tools, leveraging the open-source community and its methodologies.",
+                "link": "https://txpipe.io/",
+                "tags": [
+                    {
+                        "text": "Rust",
+                        "color": "red"
+                    },
+                    {
+                        "text": "K8S",
+                        "color": "green"
+                    }
+                ]
+            },
+            {
                 "name": "Cardano Warriors",
                 "image": "/cardano-warriors.png",
                 "summary": "Cardano Warriors emerged with the goal of creating an exceptional NFT minting experience on the Cardano Blockchain. After the success of the initial launch, we decided to embark on the development of an immersive RPG game with native integration into the Cardano Blockchain. To achieve this, we initiated the development of a platform that enables the purchase of land within the world of Cardano Warriors. Following the successful launch of the platform, we introduced the first gameplay experience called Time Attack. From that stage onward, we focused our efforts on enhancing and developing the platform, creating a new minting engine and transaction management system specifically tailored for Cardano. We utilized Rust to implement the services, rabbitMQ for communication and messaging, Redis for cache storage, and Postgresql as the transactional database. The initial version of the game was built on the Unity Engine. After completing this revamp, our final major delivery was the implementation of a hybrid on-chain/off-chain store and inventory. In this store, players had the opportunity to acquire a game item called Stardust, a magical crystal that, when activated, releases randomly generated items with varying levels of rarity.",
@@ -129,15 +145,21 @@
     "resume": {
         "experience": [
             {
-                "startAt": "2021",
+                "startAt": "2023",
                 "endAt": "present",
+                "name": "Software Engineer • TxPipe",
+                "summary": "Contribution to open source projects for the Cardano blockchain using rust as the main stack, manipulation blocks (Pallas), indexers(Scrolls), event bridger(Oura), and Demiter(Infrastructure provider)."
+            },
+            {
+                "startAt": "2021",
+                "endAt": "present (part-time)",
                 "name": "Software Developer (Tech Leader) • Cardano Warriors",
                 "summary": "I have led teams in developing DApps and games on the Cardano blockchain, specializing in NFT minting, simple transactions, and multisig. I have led innovative projects, such as an interactive game map using layered image processing with Python and rendering with Leaflet, blockchain/web3 e-commerce for selling game items, and hybrid on-chain/off-chain inventory. I successfully conducted the launch of a functional beta version of the game."
             },
             {
-                "startAt": "2021",
-                "endAt": "present",
-                "name": "Software Developer (Tech Leader) • Orion Labs/Batatais Food",
+                "startAt": "2020",
+                "endAt": "2022",
+                "name": "Software Developer • Orion Labs/Batatais Food",
                 "summary": "I led the development of a comprehensive platform for restaurant management, including the development of a web-based administrative panel, mobile point of sale (POS), desktop POS, e-commerce functionality, and support for creating white-label marketplaces for B2B."
             },
             {
