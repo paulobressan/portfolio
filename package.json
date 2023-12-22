@@ -10,7 +10,8 @@
   },
   "devDependencies": {
     "@types/node": "^18",
-    "nuxt": "^3.5.2"
+    "nuxt": "^3.5.2",
+    "nuxt-gtag": "^1.1.2"
   },
   "dependencies": {
     "bootstrap-icons": "^1.10.5"
