@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paulo Bressan - Software Engineer</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SE1SD7XGH8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SE1SD7XGH8");
+    </script>
+
+    <style>
+      :root {
+        /* Dark Mode (Default) Variables */
+        --bg-color: #1e1e1e;
+        --text-color: #e0e0e0;
+        --header-color: #6495ed; /* Cornflower Blue */
+        --link-color: #90caf9;
+        --link-hover-color: #bbdefb;
+        --border-color: #444;
+        --secondary-text-color: #aaa;
+        --nav-border-color: #555;
+        --item-border-color: #383838;
+        --button-bg-color: #333;
+        --button-text-color: #e0e0e0;
+        --button-hover-bg-color: #555;
+        --expand-button-color: #777;
+      }
+
+      body.light-mode {
+        /* Light Mode Variables */
+        --bg-color: #f4f4f4;
+        --text-color: #333;
+        --header-color: #000080; /* Navy blue */
+        --link-color: #0000ff;
+        --link-hover-color: #0000aa;
+        --border-color: #ccc;
+        --secondary-text-color: #555;
+        --nav-border-color: #ccc;
+        --item-border-color: #ddd;
+        --button-bg-color: #e0e0e0;
+        --button-text-color: #333;
+        --button-hover-bg-color: #d0d0d0;
+        --expand-button-color: #888;
+      }
+
+      body {
+        font-family: "Courier New", Courier, monospace;
+        line-height: 1.6;
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+      }
+      h1,
+      h2,
+      h3 {
+        color: var(--header-color);
+      }
+      h1 {
+        text-align: center;
+        border-bottom: 2px solid var(--header-color);
+        padding-bottom: 10px;
+      }
+      h2 {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+      h3 {
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: var(--link-hover-color);
+      }
+      .section {
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+      }
+      ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+      .contact-info p,
+      .education-item p,
+      .experience-item p,
+      .project-item p {
+        margin: 5px 0;
+      }
+      .project-item,
+      .experience-item,
+      .education-item {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed var(--item-border-color);
+      }
+      .project-item:last-child,
+      .experience-item:last-child,
+      .education-item:last-child {
+        border-bottom: none;
+      }
+      .tech-tags {
+        font-style: italic;
+        color: var(--secondary-text-color);
+        font-size: 0.9em;
+      }
+      nav {
+        text-align: center;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--nav-border-color);
+      }
+      nav a {
+        margin: 0 10px;
+        font-weight: bold;
+      }
+      .theme-toggle-button {
+        background-color: var(--button-bg-color);
+        color: var(--button-text-color);
+        border: 1px solid var(--border-color);
+        padding: 5px 10px;
+        cursor: pointer;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.9em;
+        margin-top: 10px;
+        border-radius: 3px;
+      }
+      .theme-toggle-button:hover {
+        background-color: var(--button-hover-bg-color);
+      }
+      .theme-toggle-container {
+        text-align: right;
+        margin-bottom: 15px;
+      }
+
+      /* Styles for project summary truncation */
+      .project-summary {
+        position: relative; /* For the fade-out effect positioning */
+        overflow: hidden;
+        /* Approx 3 lines. Adjust based on font-size and line-height.
+               (line-height * number of lines) e.g., 1.6em * 3 = 4.8em
+               Can also use a character limit in JS for more control.
+            */
+      }
+      .project-summary.truncated {
+        max-height: 4.8em; /* 1.6em line-height * 3 lines */
+      }
+      .project-summary.truncated::after {
+        /* Fade-out effect */
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1.6em; /* Height of one line */
+        background: linear-gradient(to bottom, transparent, var(--bg-color));
+      }
+      .project-summary.expanded {
+        max-height: none; /* Show all content */
+      }
+      .project-summary.expanded::after {
+        display: none; /* Hide fade-out when expanded */
+      }
+
+      .read-more-button {
+        display: block;
+        margin-left: auto;
+        background: none;
+        border: none;
+        color: var(--expand-button-color);
+        cursor: pointer;
+        font-family: "Courier New", Courier, monospace;
+        text-decoration: underline;
+        padding: 5px 0;
+        font-size: 0.9em;
+      }
+      .read-more-button:hover {
+        color: var(--link-hover-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="theme-toggle-container">
+      <button id="theme-toggle" class="theme-toggle-button">
+        Switch to Light Mode
+      </button>
+    </div>
+
+    <header>
+      <h1>Paulo Bressan</h1>
+      <p style="text-align: center">Software Engineer</p>
+    </header>
+
+    <nav>
+      <a href="#about">About</a> | <a href="#skills">Skills</a> |
+      <a href="#projects">Projects</a> | <a href="#experience">Experience</a> |
+      <a href="#education">Education</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I'm a Software Engineer with experience in creating impactful
+        technological solutions. Passionate about open source, startups, and
+        building impactful side projects. With solid skills in software
+        development, I constantly seek innovative ways to leverage technology to
+        drive the success of companies and causes I believe in.
+      </p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>Rust</li>
+        <li>NoSQL (MongoDB, Redis)</li>
+        <li>Node JS/TS</li>
+        <li>Vue JS/TS (NuxtJS)</li>
+        <li>SQL (Postgresql, Mysql)</li>
+        <li>Python (OpenCV, TensorFlow, DLib)</li>
+        <li>Crypto (AES, RSA)</li>
+        <li>Golang</li>
+        <li>C#</li>
+        <li>Haskell</li>
+      </ul>
+
+      <h3>Hard Skills</h3>
+      <ul>
+        <li>Linux</li>
+        <li>Devops (AWS, GCP)</li>
+        <li>Cardano Blockchain</li>
+      </ul>
+
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Leader</li>
+        <li>Communication</li>
+        <li>Adaptability</li>
+        <li>Problem-solving</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+
+      <article class="project-item">
+        <h3>TxPipe</h3>
+        <p class="project-summary">
+          Open-source software for a decentralized world. We believe that
+          blockchain adoption can be accelerated by improving developer
+          experience. We develop blockchain tools, leveraging the open-source
+          community and its methodologies.
+        </p>
+        <!-- Read more button will be inserted here by JS if needed -->
+        <p class="tech-tags">Technologies: Rust, K8S</p>
+        <p><a href="https://txpipe.io/" target="_blank">[Visit Project]</a></p>
+      </article>
+
+      <article class="project-item">
+        <h3>Cardano Warriors</h3>
+        <p class="project-summary">
+          Cardano Warriors emerged with the goal of creating an exceptional NFT
+          minting experience on the Cardano Blockchain. After the success of the
+          initial launch, we decided to embark on the development of an
+          immersive RPG game with native integration into the Cardano
+          Blockchain. To achieve this, we initiated the development of a
+          platform that enables the purchase of land within the world of Cardano
+          Warriors. Following the successful launch of the platform, we
+          introduced the first gameplay experience called Time Attack. From that
+          stage onward, we focused our efforts on enhancing and developing the
+          platform, creating a new minting engine and transaction management
+          system specifically tailored for Cardano. We utilized Rust to
+          implement the services, rabbitMQ for communication and messaging,
+          Redis for cache storage, and Postgresql as the transactional database.
+          The initial version of the game was built on the Unity Engine. After
+          completing this revamp, our final major delivery was the
+          implementation of a hybrid on-chain/off-chain store and inventory. In
+          this store, players had the opportunity to acquire a game item called
+          Stardust, a magical crystal that, when activated, releases randomly
+          generated items with varying levels of rarity.
+        </p>
+        <p class="tech-tags">Technologies: Rust, Nodejs, VueJS, C#, AWS</p>
+        <p>
+          <a href="https://cardanowarriors.io/" target="_blank">
+            [Visit Project]
+          </a>
+        </p>
+      </article>
+
+      <article class="project-item">
+        <h3>Batatais Food</h3>
+        <p class="project-summary">
+          The Batatais Food is an application that runs on top of the Orionlabs
+          platform. The platform development involves a distributed architecture
+          with over 20 services, including Core API, Backend API, Socket Server,
+          and Print Server. These services were developed using NodeJS with
+          MongoDB, Golang, and C#. The desktop Point of Sale (POS) and Print
+          Client were developed using C# Windows Form, while the mobile POS and
+          Marketplace APP were developed using Flutter. The administrative
+          panels were built using VueJS, and finally, the ecommerce section,
+          which required good SEO, was developed using NuxtJS. Currently, the
+          platform has over 200 clients. In addition to B2C functionality, the
+          platform also offers B2B capabilities for partners who wish to
+          replicate our use case and resell our systems under their own brand.
+        </p>
+        <p class="tech-tags">Technologies: VueJS, NodeJS, Golang, C#, GCP</p>
+        <p>
+          <a href="https://www.batataisfood.com.br/" target="_blank">
+            [Visit Project]
+          </a>
+        </p>
+      </article>
+
+      <article class="project-item">
+        <h3>Horus people flow counter</h3>
+        <p class="project-summary">
+          Horus was created with the aim of counting the flow of people in
+          physical stores. Therefore, a neural network model was used to detect
+          people entering and exiting the stores, utilizing the store's security
+          cameras with OpenCV to manipulate the frame. Thus, the input data of
+          people was sent to a database, which was later transferred to Google's
+          DataLake for analysis and cross-referencing with other data, such as
+          sales data, generating analyses of promotional campaign results
+          conducted in physical stores, as well as determining peak days or
+          hours of store traffic, among other insights.
+        </p>
+        <p class="tech-tags">Technologies: OpenCV, TensorFlow, Python</p>
+      </article>
+
+      <article class="project-item">
+        <h3>Chromecast Discovery</h3>
+        <p class="project-summary">
+          The Chromecast Discovery was developed with the purpose of assisting
+          salespeople in physical stores to demonstrate products on larger
+          screens through a sales application. In addition to enabling product
+          streaming, the device also featured an idle function that activated
+          after a few minutes of inactivity, displaying campaign media on the
+          screens. Each physical store had a Linux server running an internal
+          Python service responsible for managing all the Chromecasts in the
+          store, allowing sales applications to transmit via an HTTP API. The
+          server also operated a Multicast DNS service, eliminating the need for
+          server IP configuration in the sales applications. To configure the
+          campaigns to be displayed during idle times, an administrative panel
+          was created, enabling the configuration of images and videos to be
+          shown in each section of the store.
+        </p>
+        <p class="tech-tags">Technologies: Python</p>
+      </article>
+
+      <article class="project-item">
+        <h3>Remote seller</h3>
+        <p class="project-summary">
+          The Remote Salesperson was created to enable salespeople to work
+          remotely during the Covid-19 pandemic. This allowed customers to
+          access the nearest virtual store and choose a salesperson for
+          assistance and making a purchase. The solution was developed using
+          NuxtJS for the front-end and NodeJS for the Web API.
+        </p>
+        <p class="tech-tags">Technologies: VueJS, NodeJS</p>
+        <p>
+          <a
+            href="https://lojas.magazineluiza.com.br/nossos-vendedores"
+            target="_blank"
+          >
+            [Visit Project]
+          </a>
+        </p>
+      </article>
+
+      <article class="project-item">
+        <h3>Maga Chat</h3>
+        <p class="project-summary">
+          Maga Chat was created to centralize conversations from a single
+          WhatsApp number to multiple sellers. A single WhatsApp number was
+          provided for customers to contact the sellers, so an API called Kraken
+          was developed to validate the idea of sales through WhatsApp. This API
+          was written in NodeJS and had direct integration with the WhatsApp
+          Business service.
+        </p>
+        <p class="tech-tags">Technologies: NodeJS, MongoDB</p>
+      </article>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+
+      <article class="experience-item">
+        <h3>Software Engineer • TxPipe</h3>
+        <p>
+          <em><time datetime="2023">2023</time> - present</em>
+        </p>
+        <p>
+          Contribution to open source projects for the Cardano blockchain using
+          rust as the main stack, manipulation blocks (Pallas),
+          indexers(Scrolls), event bridger(Oura), and Demiter(Infrastructure
+          provider).
+        </p>
+      </article>
+
+      <article class="experience-item">
+        <h3>Software Developer (Tech Leader) • Cardano Warriors</h3>
+        <p>
+          <em><time datetime="2021">2021</time> - present (part-time)</em>
+        </p>
+        <p>
+          I have led teams in developing DApps and games on the Cardano
+          blockchain, specializing in NFT minting, simple transactions, and
+          multisig. I have led innovative projects, such as an interactive game
+          map using layered image processing with Python and rendering with
+          Leaflet, blockchain/web3 e-commerce for selling game items, and hybrid
+          on-chain/off-chain inventory. I successfully conducted the launch of a
+          functional beta version of the game.
+        </p>
+      </article>
+
+      <article class="experience-item">
+        <h3>Software Developer • Orion Labs/Batatais Food</h3>
+        <p>
+          <em>
+            <time datetime="2020">2020</time> -
+            <time datetime="2022">2022</time>
+          </em>
+        </p>
+        <p>
+          I led the development of a comprehensive platform for restaurant
+          management, including the development of a web-based administrative
+          panel, mobile point of sale (POS), desktop POS, e-commerce
+          functionality, and support for creating white-label marketplaces for
+          B2B.
+        </p>
+      </article>
+
+      <article class="experience-item">
+        <h3>Software Developer (Pleno) • Luizalabs</h3>
+        <p>
+          <em>
+            <time datetime="2019">2019</time> -
+            <time datetime="2021">2021</time>
+          </em>
+        </p>
+        <p>
+          I created innovative products for physical stores using OpenCV and
+          TensorFlow. I developed a flow counter for analyzing campaigns in
+          physical stores and a TV pairing system for broadcasting
+          advertisements.
+        </p>
+      </article>
+
+      <article class="experience-item">
+        <h3>Software Developer (Pleno) • Idealeware/Citel</h3>
+        <p>
+          <em>
+            <time datetime="2018">2018</time> -
+            <time datetime="2019">2019</time>
+          </em>
+        </p>
+        <p>
+          I worked on the development of an e-commerce platform with
+          integrations to various partners such as Mercado Livre, Hub2B,
+          Correios, Pagarme, Mercado Pago, PagSeguro, among others.
+        </p>
+      </article>
+
+      <article class="experience-item">
+        <h3>
+          Software Developer/IT assistant • Implementos Agrícolas Marispan
+        </h3>
+        <p>
+          <em>
+            <time datetime="2015">2015</time> -
+            <time datetime="2018">2018</time>
+          </em>
+        </p>
+        <p>
+          I worked on configuring corporate networks, maintaining data centers,
+          providing computer support, and developing software using C#.
+        </p>
+      </article>
+    </section>
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <article class="education-item">
+        <p>
+          <strong>UNIP • MBA Data Science & Machine Learn</strong> -
+          <em><time datetime="2019">2019</time></em>
+        </p>
+      </article>
+      <article class="education-item">
+        <p>
+          <strong>UNIP • Analysis and development of systems.</strong> -
+          <em><time datetime="2017">2017</time></em>
+        </p>
+      </article>
+      <article class="education-item">
+        <p>
+          <strong>ETEC • Systems development</strong> -
+          <em><time datetime="2015">2015</time></em>
+        </p>
+      </article>
+    </section>
+
+    <section id="contact" class="section contact-info">
+      <h2>Contact</h2>
+      <p>
+        Email:
+        <a href="mailto:paulo.bressan@outlook.com">paulo.bressan@outlook.com</a>
+      </p>
+      <p>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/paulo-b-335501115/" target="_blank"
+          >linkedin.com/in/paulo-b-335501115/</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/paulobressan" target="_blank"
+          >github.com/paulobressan</a
+        >
+      </p>
+      <p>
+        Twitter:
+        <a href="https://twitter.com/Paulo_BressanJr" target="_blank">
+          twitter.com/Paulo_BressanJr
+        </a>
+      </p>
+      <p>Phone: +5516994449951</p>
+    </section>
+
+    <footer style="text-align: center; font-size: 0.8em">
+      <hr style="border-color: var(--border-color)" />
+      <p>
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Paulo Bressan. Last updated:
+        <script>
+          document.write(new Date().toLocaleDateString());
+        </script>
+        .
+      </p>
+    </footer>
+
+    <script>
+      // Theme Toggle
+      const themeToggleButton = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      function applyThemePreference() {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") {
+          body.classList.add("light-mode");
+          themeToggleButton.textContent = "Switch to Dark Mode";
+        } else {
+          body.classList.remove("light-mode");
+          themeToggleButton.textContent = "Switch to Light Mode";
+        }
+      }
+
+      themeToggleButton.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        if (body.classList.contains("light-mode")) {
+          localStorage.setItem("theme", "light");
+          themeToggleButton.textContent = "Switch to Dark Mode";
+        } else {
+          localStorage.setItem("theme", "dark");
+          themeToggleButton.textContent = "Switch to Light Mode";
+        }
+      });
+      applyThemePreference();
+
+      // Read More for Project Summaries
+      document.addEventListener("DOMContentLoaded", () => {
+        const MAX_CHARS_APPROX_3_LINES = 250; // Adjust this value based on your average content
+        // and desired "3 line" look. For Courier New, this is a rough estimate.
+
+        document
+          .querySelectorAll(".project-summary")
+          .forEach((summaryElement) => {
+            const fullText = summaryElement.textContent.trim();
+
+            // Check if the element actually overflows its initial max-height
+            // This is a more reliable way than just character count for visual truncation
+            const isOverflowing =
+              summaryElement.scrollHeight > summaryElement.clientHeight ||
+              fullText.length > MAX_CHARS_APPROX_3_LINES;
+
+            if (isOverflowing) {
+              summaryElement.classList.add("truncated"); // Apply truncation CSS
+
+              const readMoreButton = document.createElement("button");
+              readMoreButton.classList.add("read-more-button");
+              readMoreButton.textContent = "Read More...";
+
+              // Insert button after the summary paragraph
+              summaryElement.parentNode.insertBefore(
+                readMoreButton,
+                summaryElement.nextSibling
+              );
+
+              readMoreButton.addEventListener("click", () => {
+                if (summaryElement.classList.contains("truncated")) {
+                  summaryElement.classList.remove("truncated");
+                  summaryElement.classList.add("expanded");
+                  readMoreButton.textContent = "Read Less";
+                } else {
+                  summaryElement.classList.remove("expanded");
+                  summaryElement.classList.add("truncated");
+                  readMoreButton.textContent = "Read More...";
+                  summaryElement.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                  });
+                }
+              });
+            } else {
+              // If not overflowing, ensure it's not truncated by CSS (e.g. if CSS was too aggressive)
+              summaryElement.classList.remove("truncated");
+              summaryElement.classList.add("expanded"); // Show full content
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
