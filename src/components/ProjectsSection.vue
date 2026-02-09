@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard.vue";
 </script>
 
 <template>
-  <section id="projects" class="py-10 sm:py-20 px-6">
+  <section id="projects" class="py-10 sm:py-14 px-6">
     <div class="mx-auto max-w-4xl">
       <h2 class="mb-10 text-2xl font-bold text-slate-900 dark:text-white">
         Projects

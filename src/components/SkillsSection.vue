@@ -16,7 +16,7 @@ const grouped = computed(() => {
 </script>
 
 <template>
-  <section id="skills" class="py-10 sm:py-20 px-6">
+  <section id="skills" class="py-10 sm:py-14 px-6">
     <div class="mx-auto max-w-4xl">
       <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Skills</h2>
 

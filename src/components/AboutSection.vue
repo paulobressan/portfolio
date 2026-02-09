@@ -3,7 +3,7 @@ import { profile } from "@/data/profile";
 </script>
 
 <template>
-  <section id="about" class="py-10 sm:py-20 px-6">
+  <section id="about" class="py-10 sm:py-14 px-6">
     <div class="mx-auto max-w-2xl text-left sm:text-center">
       <h1
         class="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
